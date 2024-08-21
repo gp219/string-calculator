@@ -3,16 +3,25 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { StringCalculatorComponent } from './string-calculator/string-calculator.component';
+import { StringCalculatorService } from './string-calculator.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    StringCalculatorComponent,
+    AppComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  exports: [
+    StringCalculatorComponent,
+    FormsModule
+  ],
+  providers: [StringCalculatorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

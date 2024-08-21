@@ -1,0 +1,6 @@
+<div class="calculator-container">
+    <input type="text" #numberInput placeholder="Enter numbers">
+    <button (click)="calculate()">Calculate</button>
+    <p>Result: {{ result }}</p>
+    <p *ngIf="errorMessage" class="error-message">Error: {{ errorMessage }}</p>
+</div>
