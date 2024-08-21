@@ -10,16 +10,22 @@ export class StringCalculatorService {
     }
   
     // Check for custom delimiter
-    const delimiterRegex = /^\/\/(.+)\n(.*)$/;
+    const delimiterRegex = /^\/\/([\[\]]|[^\[\]])\n(.*)$/;
     const delimiterMatch = numbers.match(delimiterRegex);
+    
+    console.log(delimiterMatch);
     let delimiter = ',';
     if (delimiterMatch) {
       delimiter = delimiterMatch[1];
       numbers = delimiterMatch[2];
     }
+    console.log(delimiterMatch);
+    
   
     // Split numbers by delimiter and newlines
-    const numberArray = numbers.split(/[\n,]/);
+    const numberArray = numbers.split(/[\n,]*/);
+    console.log(numberArray);
+    
   
     // Validate negative numbers
     const negativeNumbers = numberArray.filter(num => parseInt(num) < 0);
